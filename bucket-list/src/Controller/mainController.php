@@ -4,7 +4,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class principalController extends AbstractController
+class mainController extends AbstractController
 {
     /**
      * @Route("/", name="home")

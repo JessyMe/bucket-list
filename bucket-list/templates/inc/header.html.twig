@@ -3,12 +3,13 @@
         <img src="{{ asset('img/logo.png') }}" alt="bucket-list logo"/>
         <nav class="nav">
             <li><a href="{{ path('home') }}">Accueil</a></li>
-            <li><a href="">Ajouter un must-do</a></li>
-            <li><a href="">Deconnexion</a></li>
+            <li><a href="{{ path('idea_list') }}">Idées</a></li>
+            <li><a href="{{ path('idea_detail') }}">Deconnexion</a></li>
         </nav>
     </header>
     <div class="landing-page">
         <h1 class="big-title">World's famous bucket-list</h1>
+        <a class="scroll-down" href="">Scroll<i class="fa fa-arrow-down" aria-hidden="true" ></i></a>
     </div>
 </section>
 
