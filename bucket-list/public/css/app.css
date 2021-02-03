@@ -7,7 +7,6 @@ body {
 header.header {
     display: flex;
     align-items: center;
-    background-color: tomato;
 }
 
 header.header img {
@@ -17,18 +16,30 @@ section.top-page{
     background:url("../img/sea-wallpaper.png");
     background-size: cover;
     height: 60vh;
+    padding: 25px;
+}
+/* landing page (page de bienvenue */
 
+.big-title{
+    color: white;
+    font-size: 80px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding-left: 50px;
 }
 
 /* menu de navigation*/
 
 nav.nav {
     display: flex;
+    justify-content: space-between;
     list-style: none;
+    width: 400px;
+    margin-left: 30px;
 
 }
 
 nav.nav li{
+    font-family: 'Open Sans Condensed', sans-serif;
     color: white;
 }
 
