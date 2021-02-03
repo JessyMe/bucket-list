@@ -24,7 +24,7 @@ class IdeaController extends AbstractController
     /**
      * @Route("/detail/{id}", requirements={"id"="\d+"}, name = "idea_detail");
      */
-    public function detail($id)
+    public function detail($id = null)
     {
         return $this->render("idea/detail.html.twig");
     }
