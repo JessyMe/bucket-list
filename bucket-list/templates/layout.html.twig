@@ -1,24 +1,9 @@
 <!doctype html>
 <html lang="fr">
 <head> {% include'/inc/head.html.twig' %}
-    <title> World's Famous Bucket List </title>
 </head>
 <body>
-<header>
-    <div class="header">
-        <div>
-            <img src="{{ asset('img/logo.png') }}" alt="bucket-list logo"/>
-            <h1>World's famous bucket-list</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="{{ path('home') }}">Accueil</a></li>
-                <li><a href="">Ajouter un must-do</a></li>
-                <li><a href="">Deconnexion</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<div>{% include '/inc/header.html.twig' %}</div>
 <div class="container">
     {% block title %} World's Famous Bucket List{% endblock %}
     <main>

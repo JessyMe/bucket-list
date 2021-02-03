@@ -1,9 +1,37 @@
 body {
-    background-color: antiquewhite;
+    margin: 0 auto;
     font-family: 'Roboto Condensed ', sans-serif;
     font-size: 20px;
     color: dimgrey;
 }
+header.header {
+    display: flex;
+    align-items: center;
+    background-color: tomato;
+}
+
+header.header img {
+    width: 80px;
+}
+section.top-page{
+    background:url("../img/sea-wallpaper.png");
+    background-size: cover;
+    height: 60vh;
+
+}
+
+/* menu de navigation*/
+
+nav.nav {
+    display: flex;
+    list-style: none;
+
+}
+
+nav.nav li{
+    color: white;
+}
+
 
 h1 {
     font-family: 'Open Sans Condensed', sans-serif;
@@ -19,31 +47,13 @@ title {
 }
 
 footer{
-    background-color: darkgray;
+
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 10px;
     color: white;
 
 }
 
-header ul {
 
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-header li {
-    float: left;
-}
-
-header a {
-    display: block;
-    padding: 8px;
-
-}
-header li a:hover {
-    background-color: white;
-}
 
 
