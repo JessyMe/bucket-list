@@ -4,6 +4,13 @@ body {
     font-size: 20px;
     color: dimgrey;
 }
+
+main{
+    font-family: 'Roboto Condensed ', sans-serif;
+    font-size: 20px;
+    color: dimgrey;
+
+}
 header.header {
     display: flex;
     align-items: center;
@@ -56,6 +63,21 @@ nav.nav li{
     text-decoration: none;
 }
 
+nav.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+a:link{
+    color: darkgray;
+    text-decoration: none;
+}
+a:visited{
+    color: dimgrey ;
+    text-decoration: none;
+}
+
 /* main body*/
 .container{
     padding: 20px ;
@@ -64,6 +86,11 @@ h1 {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 40px;
     color: darkgray;
+}
+
+#date_publication {
+   color: lightskyblue;
+    font-size: 14px;
 }
 
 /* pied de page */
@@ -80,6 +107,8 @@ footer{
     text-decoration: none;
 
 }
+
+
 
 
 
