@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\IdeeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=IdeeRepository::class)
@@ -18,29 +19,61 @@ class Idea
     private $id;
 
     /**
+     *
+     * @Assert\NotBlank(message="Please provide your idea!")
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 250,
+     *      minMessage = "Your idea must be at least {{ limit }} characters long",
+     *      maxMessage = "Your idea cannot be longer than {{ limit }} characters"
+     * )
      * @ORM\Column (type="string", length=250)
      */
     private $title;
 
     /**
+     *
+     * @Assert\NotBlank(message="Please provide the description!")
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 1000,
+     *      minMessage = "The description must be at least {{ limit }} characters long",
+     *      maxMessage = "The description cannot be longer than {{ limit }} characters"
+     * )
      * @ORM\Column (type="text", nullable=true )
      */
     private $description;
 
     /**
+     * @Assert\NotBlank(message="Please provide your username!")
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 50,
+     *      minMessage = "Your username must be at least {{ limit }} characters long",
+     *      maxMessage = "Your username cannot be longer than {{ limit }} characters"
+     * )
      * @ORM\Column (type="string", length=100)
      */
     private $author;
 
     /**
+     * @Assert\Type(type="boolean", message="This value is not valid!")
      * @ORM\Column (type="boolean")
      */
     private $isPublished;
 
     /**
+     * @Assert\DateTime(message="This value is not valid!")
+     * @Assert\LessThanOrEqual("now")
      * @ORM\Column (type="datetime")
      */
     private $dateCreated;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="ideas")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
 
 
     public function getId(): ?int
@@ -125,7 +158,19 @@ class Idea
      */
     public function setDateCreated($dateCreated): void
     {
-        $this->dateCreated = $dateCreated;
+        $this->dateCreated = $dateCreated ;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
     }
 
 

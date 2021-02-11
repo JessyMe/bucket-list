@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} <h1> Contribuer </h1>{% endblock %}
+
+{% block main %}
+    <div class="form">
+        {{ form_start(ideaForm) }}
+        {{ form_widget(ideaForm) }}
+        <div class="form_button">
+            <button type="submit">Publier</button>
+            <button type="reset">Annuler</button>
+        </div>
+        {{ form_end(ideaForm) }}
+    </div>
+{% endblock %}

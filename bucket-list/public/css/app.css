@@ -36,14 +36,14 @@ section.top-page{
     font-size: 80px;
     font-family: 'Open Sans Condensed', sans-serif;
     position: absolute;
-    bottom: 280px;
+    bottom: 70%;
 }
 
 .scroll-down{
     color: grey;
     text-decoration: none;
     position: absolute;
-    bottom: 280px;
+    bottom: 65%;
 }
 
 /* menu de navigation*/

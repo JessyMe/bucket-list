@@ -6,11 +6,12 @@ namespace App\Controller;
 
 
 use App\Entity\Idea;
+use App\Form\IdeaType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
+
 
 /**
  * @Route ("/idea");
@@ -18,34 +19,30 @@ use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 
 class IdeaController extends AbstractController
 {
-
     /**
-     * @Route ("/new");
+     * @Route ("/new", name = "idea_new");
      */
-    public function add(EntityManagerInterface $em)
+    public function add(EntityManagerInterface $em, Request $request)
     {
-    /* $idea = new Idea();
-     $idea->setTitle("Lire à la recherche du temps perdu, en entier, en français.");
-     $idea->setDescription("Rien n'est plus grand que la culture, voyager dans votre esprit et apprenez à vous élever.");
-     $idea->setAuthor("MrGaston_prof");
-     $idea->setIsPublished(true);
-     $idea->setDateCreated(new \DateTime());
+     $idea = new Idea();
 
-     $em->persist($idea);
+     $ideaForm = $this->createForm(IdeaType::class, $idea);
 
-     $idea2 = new Idea();
-     $idea2->setTitle("Vivre sur une île deserte");
-     $idea2->setDescription("Et qu'on arrête enfin de me casser les pieds.");
-     $idea2->setAuthor("HanSoloDuGhetto");
-     $idea2->setIsPublished(true);
-     $idea2->setDateCreated(new \DateTime());
+     $ideaForm->handleRequest($request);
 
-     $em->persist($idea2);
+     if ($ideaForm->isSubmitted() && $ideaForm->isValid())
+     {
+         $idea->setIsPublished(true);
+         $idea->setDateCreated(new \DateTime());
 
-     $em->flush();
+         $em->persist($idea);
+         $em->flush();
+         return $this->redirectToRoute('idea_detail', ["id" => $idea->getId()]);
+     }
+     return $this->render('idea/new.html.twig', [
+         'ideaForm'=> $ideaForm ->createView()
+     ]);
 
-     return $this->render('idea/list.html.twig');
-*/
     }
 
     /**
