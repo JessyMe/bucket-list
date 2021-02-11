@@ -1,5 +1,5 @@
 {% extends 'layout.html.twig' %}
-{% block title%} <h1> {{ idea.title }}</h1> <p> de {{ idea.author }}</p>  {% endblock %}
+{% block title%} <h1> {{ idea.title }}</h1> <p> category {{ idea.category.name }} from {{ idea.author }} </p>  {% endblock %}
 {% block main %}
 
     <div class="description"> {{ idea.description }}</div><br>

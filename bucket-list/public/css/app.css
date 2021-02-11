@@ -36,14 +36,14 @@ section.top-page{
     font-size: 80px;
     font-family: 'Open Sans Condensed', sans-serif;
     position: absolute;
-    bottom: 70%;
+    bottom: 40%;
 }
 
 .scroll-down{
     color: grey;
     text-decoration: none;
     position: absolute;
-    bottom: 65%;
+    top: 50%;
 }
 
 /* menu de navigation*/
@@ -105,7 +105,10 @@ footer{
     font-size: 10px;
     color: black;
     text-decoration: none;
+}
 
+#inputEmail {
+    background-color: #B0413E;
 }
 
 
